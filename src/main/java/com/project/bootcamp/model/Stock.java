@@ -30,7 +30,7 @@ public class Stock {
     private Double variation;
 
     @Column(name = "date")
-    private LocalDate trandingDate;
+    private LocalDate date;
 
     public Long getId() {
         return id;
@@ -64,11 +64,11 @@ public class Stock {
         this.variation = variation;
     }
 
-    public LocalDate getTrandingDate() {
-        return trandingDate;
+    public LocalDate getDate() {
+        return this.date;
     }
 
-    public void setTrandingDate(LocalDate trandingDate) {
-        this.trandingDate = trandingDate;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }

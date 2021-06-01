@@ -17,11 +17,11 @@ public class StockMapper {
         Stock stock = new Stock();
         stock.setId(dto.getId());
         stock.setName(dto.getName());
-        stock.setTrandingDate(dto.getTrandingDate());
+        stock.setDate(dto.getDate());
         stock.setPrice(dto.getPrice());
         stock.setVariation(dto.getVariation());
 
-        System.out.println("DATA MAPPER: "+stock.getTrandingDate());
+        System.out.println("DATA MAPPER: "+stock.getDate());
         return stock;
     }
 
@@ -32,7 +32,7 @@ public class StockMapper {
         stockDTO.setName(active.getName());
         stockDTO.setPrice(active.getPrice());
         stockDTO.setVariation(active.getVariation());
-        stockDTO.setTrandingDate(active.getTrandingDate());
+        stockDTO.setDate(active.getDate());
         return stockDTO;
     }
 

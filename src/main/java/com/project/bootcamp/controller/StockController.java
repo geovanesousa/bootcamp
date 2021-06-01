@@ -28,7 +28,7 @@ public class StockController {
     //estou dizendo que vou retornar pra quem me chamou o objeto que salvei
     //quem está me requisitando vai ter que me enviar um StockDTO atraves de um body
     public ResponseEntity<StockDTO> save(@Valid @RequestBody StockDTO dto){
-        System.out.println("DATA CONTROLLER: "+dto.getTrandingDate());
+        System.out.println("DATA CONTROLLER: "+dto.getDate());
         //retorna o status 200 e o objeto recebido
         return ResponseEntity.ok(service.save(dto));
     }
