@@ -36,7 +36,7 @@ public class StockService {
     @Transactional
     public StockDTO save(StockDTO dto) {
         //procura se ja existe stock por nome e data
-        Optional<Stock> optionalStock = repository.findByNameAndDate(dto.getName(),dto.getDate());
+        Optional<Stock> optionalStock = repository.findByNameAndDate(dto.getName(),dto.getTrandingDate());
         if(optionalStock.isPresent()){
             //lanca uma exeception
             throw new BusinessException(MessageUtils.STOCK_ALREADY_EXISTS);
@@ -44,16 +44,16 @@ public class StockService {
 
 
         //converte o objeto recebido para Stock
-        Stock stock = mapper.toEntity(dto);
-        System.out.println("DATA SERVICE: "+stock.getDate());
-        repository.save(stock);
+        Stock active = mapper.toEntity(dto);
+        System.out.println("DATA SERVICE: "+active.getTrandingDate());
+        repository.save(active);
         //converte stock para stockDTO e retorna já com o ID cadastrado
-        return mapper.toDto(stock);
+        return mapper.toDto(active);
     }
 
     public StockDTO update(StockDTO dto) {
         //procura se ja existe stock por nome e data
-        Optional<Stock> optionalStock = repository.findByStockUpdate(dto.getName(),dto.getDate(), dto.getId());
+        Optional<Stock> optionalStock = repository.findByStockUpdate(dto.getName(),dto.getTrandingDate(), dto.getId());
         if(optionalStock.isPresent()){
             //lanca uma exeception
             throw new BusinessException(MessageUtils.STOCK_ALREADY_EXISTS);

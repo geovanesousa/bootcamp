@@ -1,7 +1,13 @@
 package com.project.bootcamp.model;
 
-import javax.persistence.*;
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 //corresponde a tabela tb_stock do banco de dados
 @Entity
@@ -23,8 +29,8 @@ public class Stock {
     @Column(name = "variation")
     private Double variation;
 
-    @Column(name = "date", columnDefinition = "DATE")
-    private LocalDate date;
+    @Column(name = "date")
+    private LocalDate trandingDate;
 
     public Long getId() {
         return id;
@@ -58,12 +64,11 @@ public class Stock {
         this.variation = variation;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getTrandingDate() {
+        return trandingDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setTrandingDate(LocalDate trandingDate) {
+        this.trandingDate = trandingDate;
     }
-
 }

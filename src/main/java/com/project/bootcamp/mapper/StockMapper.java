@@ -17,23 +17,23 @@ public class StockMapper {
         Stock stock = new Stock();
         stock.setId(dto.getId());
         stock.setName(dto.getName());
-        stock.setDate(dto.getDate());
+        stock.setTrandingDate(dto.getTrandingDate());
         stock.setPrice(dto.getPrice());
         stock.setVariation(dto.getVariation());
 
-        System.out.println("DATA MAPPER: "+stock.getDate());
+        System.out.println("DATA MAPPER: "+stock.getTrandingDate());
         return stock;
     }
 
     //transforma entity em DTO
-    public StockDTO toDto(Stock stock) {
-        StockDTO dto = new StockDTO();
-        dto.setId(stock.getId());
-        dto.setName(stock.getName());
-        dto.setPrice(stock.getPrice());
-        dto.setVariation(stock.getVariation());
-        stock.setDate(dto.getDate());
-        return dto;
+    public StockDTO toDto(Stock active) {
+        StockDTO stockDTO = new StockDTO();
+        stockDTO.setId(active.getId());
+        stockDTO.setName(active.getName());
+        stockDTO.setPrice(active.getPrice());
+        stockDTO.setVariation(active.getVariation());
+        stockDTO.setTrandingDate(active.getTrandingDate());
+        return stockDTO;
     }
 
     //transforma uma lista de entity em uma lista de DTO

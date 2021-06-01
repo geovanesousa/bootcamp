@@ -27,7 +27,7 @@ public class StockDTO {
     @NotNull
     //converte a data que vem em JSON para o padrao brasileiro
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate date;
+    private LocalDate trandingDate;
 
     public Long getId() {
         return id;
@@ -61,11 +61,11 @@ public class StockDTO {
         this.variation = variation;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getTrandingDate() {
+        return trandingDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setTrandingDate(LocalDate trandingDate) {
+        this.trandingDate = trandingDate;
     }
 }
