@@ -26,7 +26,7 @@ public class StockDTO {
 
     @NotNull
     //converte a data que vem em JSON para o padrao brasileiro
-    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate date;
 
     public Long getId() {
